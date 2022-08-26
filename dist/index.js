@@ -274,6 +274,7 @@ async function run() {
       octokit,
       owner,
       repo,
+      inputs
     });
 
     await octokit.issues.createComment({
@@ -288,9 +289,9 @@ async function run() {
   }
 }
 
-async function deletePreviousComments({ owner, repo, octokit, issueNumber }) {
+async function deletePreviousComments({ owner, repo, octokit, issueNumber, inputs }) {
   const onlyPreviousCoverageComments = (comment) => {
-    const regexMarker = /^<!--json:{.*?}-->/;
+    const regexMarker = new RegExp(inputs.title);
     const extractMetaFromMarker = (body) => JSON.parse(body.replace(/^<!--json:|-->(.|\n|\r)*$/g, ''));
 
     if (comment.user.type !== 'Bot') return false;
