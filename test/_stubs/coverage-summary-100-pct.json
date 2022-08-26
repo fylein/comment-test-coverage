@@ -2,9 +2,9 @@
   "total": {
     "lines": {
       "total":10,
-      "covered":10,
-      "skipped":0,
-      "pct":100
+      "covered":9,
+      "skipped":1,
+      "pct":90
     },
     "statements":{"total":10,
       "covered":10,
