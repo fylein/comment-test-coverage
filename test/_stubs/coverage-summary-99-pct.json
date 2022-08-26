@@ -4,7 +4,7 @@
         "total":10,
         "covered":9,
         "skipped":1,
-        "pct":99
+        "pct":19
       },
       "statements":{"total":10,
         "covered":10,
