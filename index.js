@@ -50,7 +50,7 @@ async function run() {
       inputs
     });
 
-    await octokit.issues.createComment({
+    await octokit.rest.issues.createComment({
       owner,
       repo,
       issue_number: issueNumber,
@@ -76,14 +76,14 @@ async function deletePreviousComments({ owner, repo, octokit, issueNumber, input
   }
 
   const asyncDeleteComment = (comment) => {
-    return octokit.issues.deleteComment({ owner, repo, comment_id: comment.id });
+    return octokit.rest.issues.deleteComment({ owner, repo, comment_id: comment.id });
   }
 
-  const commentList = await octokit.issues.listComments({
+  const { data: commentList } = await octokit.rest.issues.listComments({
     owner,
     repo,
     issue_number: issueNumber,
-  }).then(response => response.data);
+  });
 
   await Promise.all(
     commentList
