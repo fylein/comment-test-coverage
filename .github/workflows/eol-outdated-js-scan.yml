@@ -6,6 +6,7 @@ on:
 
 jobs:
   filter:
+    if: ${{ github.event.pull_request.draft == false }}
     name: Get changed files
     runs-on: ubuntu-latest
 
@@ -20,6 +21,7 @@ jobs:
           filters: |
             dependencies:
               - 'package-lock.json'
+              - 'package.json'
 
   scan:
     name: Run scanner
