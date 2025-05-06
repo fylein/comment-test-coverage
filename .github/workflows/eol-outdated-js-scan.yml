@@ -7,8 +7,8 @@ on:
 
 jobs:
   call-eol-scan:
-    uses: fylein/workflows/.github/workflows/eol-outdated-js-scan.yml@master
     if: ${{ github.event.pull_request.draft == false }}
+    uses: fylein/workflows/.github/workflows/eol-outdated-js-scan.yml@master
     with:
       github-token: ${{ secrets.GITHUB_TOKEN }}
       suppression: 'suppression.xml'
