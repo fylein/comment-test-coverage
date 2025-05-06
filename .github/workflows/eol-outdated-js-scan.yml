@@ -1,4 +1,4 @@
-name: EOL JS Scan
+name: End of Life and Outdated JS Scan
 
 on:
   pull_request:
