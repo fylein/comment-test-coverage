@@ -9,8 +9,10 @@ jobs:
   call-eol-scan:
     if: ${{ github.event.pull_request.draft == false }}
     uses: fylein/workflows/.github/workflows/eol-outdated-js-scan.yml@master
+    with:
+      suppression: 'suppression.xml'
+      github-token: ${{ secrets.GITHUB_TOKEN }}
+      nvd-api-key: ${{ secrets.NVD_API_KEY }}
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
       nvd-api-key: ${{ secrets.NVD_API_KEY }}
-    with:
-      suppression: 'suppression.xml'
