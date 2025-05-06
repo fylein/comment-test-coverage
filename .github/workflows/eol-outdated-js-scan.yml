@@ -25,7 +25,7 @@ jobs:
           filters: |
             dependencies:
               - 'package-lock.json'
-
+              - 'package.json'
   scan:
     name: Run scanner
     timeout-minutes: 15
