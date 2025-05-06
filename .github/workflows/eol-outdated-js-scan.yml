@@ -25,7 +25,7 @@ jobs:
           filters: |
             dependencies:
               - 'package-lock.json'
-              - 'package.json'
+
   scan:
     name: Run scanner
     timeout-minutes: 15
@@ -57,6 +57,6 @@ jobs:
 
       - name: Depcheck
         timeout-minutes: 10
-        uses: fylein/eol-outdated-js-scan-action@add-nvd-key-2
+        uses: fylein/eol-outdated-js-scan-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
