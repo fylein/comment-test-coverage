@@ -57,6 +57,6 @@ jobs:
 
       - name: Depcheck
         timeout-minutes: 10
-        uses: fylein/eol-outdated-js-scan-action@master
+        uses: fylein/eol-outdated-js-scan-action@add-nvd-key-2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
