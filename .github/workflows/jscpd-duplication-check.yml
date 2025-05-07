@@ -1,0 +1,24 @@
+name: JSCPD Duplication Check
+
+on:
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize, reopened, ready_for_review]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  call-jscpd-duplication-check:
+    if: ${{ github.event.pull_request.draft == false }}
+    uses: fylein/workflows/.github/workflows/jscpd-duplication-check.yml@v1
+    secrets:
+      github-token: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      duplication_threshold: 7
+      reviewer_1: 'ashwin1111'
+      reviewer_2: 'JustARatherRidiculouslyLongUsername'
+      tech_stack: 'JavaScript'
+      command_to_run: 'npx jscpd --ignore "**/node_modules/**" --output report --reporters json'
+
