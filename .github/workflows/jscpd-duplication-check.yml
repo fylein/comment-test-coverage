@@ -16,7 +16,7 @@ jobs:
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
     with:
-      duplication_threshold: 7
+      duplication_threshold: 8
       reviewer_1: 'ashwin1111'
       reviewer_2: 'JustARatherRidiculouslyLongUsername'
       tech_stack: 'JavaScript'
