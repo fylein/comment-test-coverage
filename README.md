@@ -41,8 +41,8 @@ jobs:
 
 ## How to edit the action
 Feel free to submit a PR to this repo and ask me to update the action, but if you'd like to create your own action:
-1. Clone down repo, `npm install`, and make changes
-2. Run `npm run package` 
+1. Clone down repo, `pnpm install`, and make changes
+2. Run `pnpm run package` 
 3. Commit changes
 4. Create a new release on GitHub to publish latest version of the action. See https://help.github.com/en/actions/building-actions/publishing-actions-in-github-marketplace
 

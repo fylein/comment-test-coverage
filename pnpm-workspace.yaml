@@ -1,0 +1,17 @@
+# https://pnpm.io/settings#allowbuilds
+allowBuilds: {}
+blockExoticSubdeps: true
+
+minimumReleaseAge: 1440
+
+overrides:
+  undici: 7.24.5
+
+# Dependency install scripts: fail install (CI and local) unless the package is allowlisted below.
+# https://pnpm.io/settings#strictdepbuilds — errors on unapproved scripts (not just warnings).
+strictDepBuilds: true
+
+trustPolicy: no-downgrade
+
+# https://pnpm.io/settings#verifydepsbeforerun
+verifyDepsBeforeRun: error
