@@ -7,6 +7,9 @@
   "scripts": {
     "package": "ncc build index.js -o dist"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fylein/comment-test-coverage.git"
