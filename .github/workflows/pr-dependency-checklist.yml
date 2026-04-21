@@ -1,0 +1,16 @@
+name: PR Dependency Checklist
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, edited]
+
+concurrency:
+  group: pr-dependency-checklist-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pr_dependency_checklist:
+    permissions:
+      contents: read
+      pull-requests: write
+    uses: fylein/workflows/.github/workflows/pr-dependency-checklist.yml@master
