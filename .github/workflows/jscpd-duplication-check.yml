@@ -20,7 +20,7 @@ jobs:
       reviewer_1: 'ashwin1111'
       reviewer_2: 'JustARatherRidiculouslyLongUsername'
       tech_stack: 'JavaScript'
-      command_to_run: 'pnpm dlx jscpd --ignore "**/node_modules/**" --output report --reporters json'
+      # The shared workflow reads jscpd v4's per-format `total` schema.
+      command_to_run: 'pnpm dlx jscpd@4.0.8 --ignore "**/node_modules/**" --output report --reporters json'
       package_manager: 'pnpm'
-
 
