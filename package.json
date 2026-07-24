@@ -8,7 +8,7 @@
     "package": "ncc build index.js -o dist"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "repository": {
     "type": "git",
