@@ -9,6 +9,10 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   call-jscpd-duplication-check:
     if: ${{ github.event.pull_request.draft == false }}
@@ -23,4 +27,3 @@ jobs:
       # The shared workflow reads jscpd v4's per-format `total` schema.
       command_to_run: 'pnpm dlx jscpd@4.0.8 --ignore "**/node_modules/**" --output report --reporters json'
       package_manager: 'pnpm'
-
